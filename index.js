@@ -10,7 +10,8 @@ conectarDB();
 
 // Habilitar Cors
 // Para que esto funcione necesito tener la base de datos que se estan utilizando completamente vacias.
-app.use(cors());
+app.use(cors({ credentials: true, origin: true }));
+app.options("*", cors());
 
 // Habilitar express.js
 app.use( express.json({ extended: true }) );
